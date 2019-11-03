@@ -16,10 +16,7 @@
     <%= form.text_field :name %>
   </div>
 
-  <div class="form-field">
-    <%= form.label :periodic %>
-    <%= form.number_field :periodic %>
-  </div>
+  <%= render partial: 'periodic', locals: { form: form } %>
 
   <div class="actions">
     <%= form.submit %>
