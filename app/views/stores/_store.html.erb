@@ -1,0 +1,13 @@
+<tr>
+  <td>
+    <%= store.id %>
+  </td>
+  <td>
+    <%= store.name %>
+  <td>
+    <%= link_to '', edit_store_path(store), id: "edit_#{store.id}", class: 'fa fa-edit index-icons' %>
+  </td>
+  <td>
+    <%= link_to '', store_path(store), method: :delete, id: "delete_store_#{store.id}_from_index",  class: 'fa fa-trash index-icons', data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

@@ -1,0 +1,17 @@
+<tr>
+  <td>
+    <%= kind.id %>
+  </td>
+  <td>
+    <%= kind.name %>
+  <td>
+  <td>
+    <%= kind.periodic %>
+  <td>
+
+  <%= link_to '', edit_kind_path(kind), id: "edit_#{kind.id}", class: 'fa fa-edit index-icons' %>
+  </td>
+  <td>
+    <%= link_to '', kind_path(kind), method: :delete, id: "delete_kind_#{kind.id}_from_index",  class: 'fa fa-trash index-icons', data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
