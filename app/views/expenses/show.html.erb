@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-6 ml-auto mr-auto">
+
+    <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @expense.date %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @expense.amount %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @expense.description %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @expense.expense_type %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @expense.kind.name %>
+</p>
+
+<p>
+  <strong>Store:</strong>
+  <%= @expense.store.name %>
+</p>
+
+<%= link_to 'Edit', edit_expense_path(@expense) %> |
+<%= link_to 'Back', expenses_path %>
+
+    </div>
+  </div>
+</div>

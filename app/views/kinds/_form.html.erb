@@ -1,24 +1,14 @@
-<%= form_with(model: kind, local: true) do |form| %>
-  <% if kind.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(kind.errors.count, "error") %> prohibited this kind from being saved:</h2>
+<%= simple_form_for(@kind) do |form| %>
+  <%= form.error_notification %>
+  <%= form.error_notification message: form.object.errors[:base].to_sentence if form.object.errors[:base].present? %>
 
-      <ul>
-        <% kind.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-inputs">
+    <%= form.input :name %>
   </div>
 
-  <%= render partial: 'periodic', locals: { form: form } %>
+  <%= render partial: 'periodic', locals: {form: form } %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= form.button :submit, "Save", class: 'btn btn-outline-primary btn-block' %>
   </div>
 <% end %>

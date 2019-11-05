@@ -48,4 +48,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'name_of_person', '~> 1.1', '>= 1.1.1'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
-gem 'administrate', github: 'excid3/administrate', branch: 'jumpstart'
+# gem 'administrate', github: 'excid3/administrate', branch: 'jumpstart'
+gem 'groupdate', '~> 4.2'
+gem 'chartkick'

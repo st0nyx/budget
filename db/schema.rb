@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_084228) do
+ActiveRecord::Schema.define(version: 2019_11_04_123859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "expenses", force: :cascade do |t|
+    t.date "date"
+    t.decimal "amount", precision: 10, scale: 2
+    t.string "description"
+    t.bigint "kind_id", null: false
+    t.bigint "store_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "expense_type"
+    t.index ["kind_id"], name: "index_expenses_on_kind_id"
+    t.index ["store_id"], name: "index_expenses_on_store_id"
+  end
 
   create_table "kinds", force: :cascade do |t|
     t.string "name"
@@ -43,4 +56,6 @@ ActiveRecord::Schema.define(version: 2019_11_03_084228) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "expenses", "kinds"
+  add_foreign_key "expenses", "stores"
 end

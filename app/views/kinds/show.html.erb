@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-6 ml-auto mr-auto">
 
-<p>
-  <strong>Name:</strong>
-  <%= @kind.name %>
-</p>
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Periodic:</strong>
-  <%= @kind.periodic %>
-</p>
+      <p>
+        <strong>Name:</strong>
+        <%= @kind.name %>
+      </p>
 
-<%= link_to 'Edit', edit_kind_path(@kind) %> |
-<%= link_to 'Back', kinds_path %>
+      <p>
+        <strong>Periodic:</strong>
+        <%= @kind.periodic %>
+      </p>
+
+      <%= link_to 'Edit', edit_kind_path(@kind) %> |
+      <%= link_to 'Back', kinds_path %>
+    </div>
+  </div>
+</div>

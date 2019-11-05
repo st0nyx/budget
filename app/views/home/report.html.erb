@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+
+  <%= bar_chart Expense.group_by_day(:date).sum(:amount) %>
+
+  </div>
+</div>
