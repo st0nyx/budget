@@ -1,10 +1,20 @@
 class ShoppingsController < ApplicationController
-  before_action :set_shopping, only: [:show, :edit, :update, :destroy]
+  before_action :set_shopping, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /shoppings
   # GET /shoppings.json
   def index
     @shoppings = Shopping.all
+  end
+
+  def toggle_status
+    if @shopping.open?
+      @shopping.done!
+    elsif @shopping.done?
+      @shopping.open!
+    end
+
+    redirect_to shoppings_url, notice: 'Post status has been updated.'
   end
 
   # GET /shoppings/1

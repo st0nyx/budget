@@ -51,3 +51,5 @@ gem 'simple_form', '~> 5.0', '>= 5.0.1'
 # gem 'administrate', github: 'excid3/administrate', branch: 'jumpstart'
 gem 'groupdate', '~> 4.2'
 gem 'chartkick'
+gem 'whenever', require: false
+gem 'money-rails', '~> 1.13', '>= 1.13.3'
