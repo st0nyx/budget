@@ -1,7 +1,27 @@
 <div class="container">
   <div class="row">
 
-  <%= bar_chart Expense.group_by_day(:date).sum(:amount_cents) %>
+  <%= bar_chart Expense.group_by_day(:date).sum(:amount) %>
 
   </div>
 </div>
+
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-lg-12 col-md-6 ml-auto mr-auto">-->
+
+<!--      <table class="table table-striped table-hover">-->
+
+<!--        <h3> Today </h3>-->
+        <%# @expenses.grouped_expenses.each do |key, value| %>
+<!--          <tr><td><%#= key %></td></tr></td>-->
+
+<!--          <tr><td><%#= value %></td></tr></>-->
+<!--          <br />-->
+        <%# end %>
+<!--        <br />-->
+<!--        </table>-->
+<!--        </div>-->
+<!--  </div>-->
+<!--</div>-->
+

@@ -5,4 +5,5 @@ module ShoppingsHelper
     'color: green;' if shopping.done?
   end
 
+
 end

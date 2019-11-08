@@ -17,6 +17,7 @@ class ShoppingsController < ApplicationController
     redirect_to shoppings_url, notice: 'Post status has been updated.'
   end
 
+
   # GET /shoppings/1
   # GET /shoppings/1.json
   def show
