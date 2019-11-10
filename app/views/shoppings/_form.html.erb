@@ -8,6 +8,8 @@
   </div>
 
   <%= render partial: 'status', locals: {f: f } %>
+  <%= render partial: 'urgent', locals: {f: f } %>
+
 
   <div class="form-actions">
     <%= f.button :submit, "Save", class: 'btn btn-outline-primary btn-block' %>

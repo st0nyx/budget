@@ -16,6 +16,12 @@
         <%= @shopping.status %>
       </p>
 
+      <p>
+        <strong>Status:</strong>
+        <%= @shopping.urgent %>
+      </p>
+
+
       <%= link_to 'Edit', edit_shopping_path(@shopping) %> |
       <%= link_to 'Back', shoppings_path %>
     </div>

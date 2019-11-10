@@ -1,14 +1,13 @@
 <tr>
   <td><%= expense.date %></td>
   <td><%= number_to_currency(expense.amount, unit: '', separator: '.') %></td>
-
-  <!--  <td><%#= number_to_currency(expense.amount, unit: " ", separator: ".", delimiter: ".", precision: 2) %></td>-->
   <td><%= expense.description %></td>
   <td><%= expense.expense_type %></td>
   <td><%= expense.kind.name %></td>
   <td><%= expense.store.name %></td>
   <td><%= link_to '', expense, id: "show#{expense.id}", class: 'fa fa-eye index-icons' %></td>
   <td><%= link_to '', edit_expense_path(expense), id: "edit_#{expense.id}", class: 'fa fa-edit index-icons' %></td>
-  <td><%= link_to '', expense_path(expense), method: :delete, id: "delete_expense_#{expense.id}_from_index",  class: 'fa fa-trash index-icons', data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to '', expense_path(expense), method: :delete, id: "delete_expense_#{expense.id}_from_index",
+                  class: 'fa fa-trash index-icons', data: { confirm: 'Are you sure?' } %></td>
 </tr>
 

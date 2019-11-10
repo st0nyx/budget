@@ -1,7 +1,7 @@
 <div class="form-group">
-  <%= f.radio_button :status, 'open' %>
+  <%= f.radio_button :status, 'open', wrapper: :horizontal_collection_inline %>
   <%= f.label :status, 'Open' %>
 
-  <%= f.radio_button :status, 'done' %>
+  <%= f.radio_button :status, 'done', wrapper: :horizontal_collection_inline %>
   <%= f.label :status, 'Done' %>
 </div>

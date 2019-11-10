@@ -6,6 +6,7 @@ class Expense < ApplicationRecord
   accepts_nested_attributes_for :store
   accepts_nested_attributes_for :kind
 
+  scope :recent, -> { where('date > ?', 1.week.ago).order(date: :desc) }
 
   # monetize :amount_cents
 

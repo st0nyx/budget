@@ -2,8 +2,8 @@
   <td><%= shopping.id %></td>
   <td><%= shopping.name %><td>
   <td><%= shopping.status %><td>
-  <td><%= link_to '', toggle_status_shopping_path(shopping), class: 'fa fa-shopping-cart fa-2x', style: shopping_status_color(shopping) %></td>
-
+  <td><%= shopping.urgent %></td>
+  <td><%= link_to '', toggle_status_shopping_path(shopping), class: 'fa fa-shopping-cart', style: shopping_status_color(shopping) %></td>
   <td><%= link_to '', edit_shopping_path(shopping), id: "edit_#{shopping.id}", class: 'fa fa-edit index-icons' %></td>
   <td><%= link_to '', shopping_path(shopping), method: :delete, id: "delete_shopping_#{shopping.id}_from_index",  class: 'fa fa-trash index-icons', data: { confirm: 'Are you sure?' } %></td>
 

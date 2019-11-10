@@ -6,31 +6,14 @@ class ExpensesController < ApplicationController
   def index
     @expenses = Expense.all.order(date: :desc)
 
-    #Retrives all messages and divides into two groups todays messages and other messages
-    #
-    # @grouped_messages = @expenses.group_by{ |t| t.created_at.to_date == DateTime.now.to_date }
+    @expenses_recent = Expense.all.recent
 
-
-    @grouped_expenses = Expense.group_by_month(:date).sum(:amount)  #{ |t| t.created_at.to_date == DateTime.now.to_date }
-
-    # if @grouped_expenses[false].present?
-    #   #Create month wise groups of messages
-    #   @month_wise_sorted_alerts  = @grouped_expenses[false].group_by{ |t| t.created_at.month}
-    # end
-
-
+    @grouped_expenses = Expense.all.group_by_month(:date, last: 1).sum(:amount)  #{ |t| t.created_at.to_date == DateTime.now.to_date }
 
     respond_to do |format|
       format.html
     end
   end
-
-
-
-
-
-
-
 
   # GET /expenses/1
   # GET /expenses/1.json

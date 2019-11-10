@@ -5,6 +5,8 @@ class ShoppingsController < ApplicationController
   # GET /shoppings.json
   def index
     @shoppings = Shopping.all
+    @shoppings_open = Shopping.all.open
+
   end
 
   def toggle_status
@@ -80,6 +82,6 @@ class ShoppingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shopping_params
-      params.require(:shopping).permit(:name, :description, :status)
+      params.require(:shopping).permit(:name, :description, :status, :urgent)
     end
 end
