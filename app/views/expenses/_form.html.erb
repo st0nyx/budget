@@ -3,8 +3,10 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :date %>
-    <%= f.input :amount, as: :money %>
+    <%= f.label :date %>
+    <%= f.text_field :date, data: { behavior: "flatpickr" } %>
+    <%= f.label :amount %>
+    <%= f.input :amount, as: :money, label:false %>
     <%= f.input :description %>
     <%= f.association :kind, as: :radio_buttons, wrapper: :horizontal_collection_inline, checked: 1 %>
     <%= f.association :store, as: :radio_buttons, wrapper: :horizontal_collection_inline, checked: 1 %>
