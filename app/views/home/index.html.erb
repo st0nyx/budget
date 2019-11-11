@@ -12,7 +12,7 @@
 
       <h5>Current & Previous Month Spent</h5>
       <table class="table table-striped table-hover">
-        <% Expense.group_by_month(:date, last: 2, format: "%Y, %B").sum(:amount).each do |key, value| %>
+        <% Expense.group_by_month(:date, last: 2, reverse: true, format: "%Y - %B").sum(:amount).each do |key, value| %>
           <tr>
           <td><%= key %></td>
           <td><%= value %></td>
@@ -23,30 +23,36 @@
       <hr>
 
       <h5>Shoppings</h5>
-      <table class="table table-striped table-hover">
-        <% Shopping.all.open.each do |c| %>
-          <tr>
-            <td><%= link_to c.name, shoppings_path, :action => "index", :id => c.id %></td>
-            <td><%= c.description %></td>
-            <td><%= c.status %></td>
-            <td><%= c.urgent %></td>
-          </tr>
-        <% end %>
-      </table>
-
+      <% if Shopping.open.any? %>
+        <table class="table table-striped table-hover">
+          <% Shopping.all.open.each do |c| %>
+            <tr>
+              <td><%= link_to c.name, shoppings_path, :action => "index", :id => c.id %></td>
+              <td><%= c.description %></td>
+              <td><%= c.urgent %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% else %>
+        <p>No Shopping Items on the List!</p>
+      <% end %>
       <hr>
 
       <h5>Latest Expenses - last 7 Days</h5>
-      <table class="table table-striped table-hover">
-        <% Expense.all.recent.each do |c| %>
-          <tr>
-            <td><%= link_to c.date, expenses_path, :action => "index", :id => c.id %></td>
-            <td><%= c.store.name %></td>
-            <td><%= c.kind.name %></td>
-            <td><%= c.amount %></td>
-          </tr>
-          <% end %>
-      </table>
+      <% if Expense.recent.any? %>
+        <table class="table table-striped table-hover">
+          <% Expense.all.recent.each do |c| %>
+            <tr>
+              <td><%= link_to c.date, expenses_path, :action => "index", :id => c.id %></td>
+              <td><%= c.store.name %></td>
+              <td><%= c.kind.name %></td>
+              <td><%= c.amount %></td>
+            </tr>
+            <% end %>
+        </table>
+      <% else %>
+        <p>No Expenses in the last 7 Days!</p>
+      <% end %>
 
     </div>
   </div>

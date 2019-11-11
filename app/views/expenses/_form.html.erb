@@ -6,8 +6,8 @@
     <%= f.input :date %>
     <%= f.input :amount, as: :money %>
     <%= f.input :description %>
-    <%= f.association :kind, as: :radio_buttons, wrapper: :horizontal_collection_inline %>
-    <%= f.association :store, as: :radio_buttons, wrapper: :horizontal_collection_inline %>
+    <%= f.association :kind, as: :radio_buttons, wrapper: :horizontal_collection_inline, checked: 1 %>
+    <%= f.association :store, as: :radio_buttons, wrapper: :horizontal_collection_inline, checked: 1 %>
   </div>
 
   <%= render partial: 'expensetype', locals: {f: f } %>
