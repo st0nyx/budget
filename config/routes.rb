@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :expenses
   resources :kinds
   resources :stores
-  devise_for :users
+  devise_for :users, skip: :registration
   root to: 'home#index'
   get 'home/report'
 

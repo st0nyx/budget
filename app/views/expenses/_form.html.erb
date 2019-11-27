@@ -4,11 +4,10 @@
 
   <div class="form-inputs">
     <%= f.label :date %>
-    <%= f.text_field :date, data: { behavior: "flatpickr" } %>
-    <%= f.label :amount %>
-    <%= f.input :amount, as: :money, label:false %>
+    <%= f.text_field :date, data: { behavior: "flatpickr" } %><br>
+    <%= f.input :amount, as: :money, label: "Amount" %>
     <%= f.input :description %>
-    <%= f.association :kind, as: :radio_buttons, wrapper: :horizontal_collection_inline, checked: 1 %>
+    <%= f.association :kind, as: :radio_buttons, wrapper: :horizontal_collection_inline %>
     <%= f.association :store, as: :radio_buttons, wrapper: :horizontal_collection_inline, checked: 1 %>
   </div>
 

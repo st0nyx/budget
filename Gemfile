@@ -53,3 +53,4 @@ gem 'groupdate', '~> 4.2'
 gem 'chartkick'
 gem 'whenever', require: false
 gem 'money-rails', '~> 1.13', '>= 1.13.3'
+gem 'rubocop', '~> 0.76.0', require: false

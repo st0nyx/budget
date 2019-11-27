@@ -1,9 +1,13 @@
-<footer class="footer text-muted">
-  <div class="container">
-    <span>© <%= Date.today.year %> DevStonic - Bruno Steinmann</span>
-    <ul class="list-inline mb-0 float-right">
-      <li class="list-inline-item mr-3"><%= link_to "Terms", "" %></li>
-      <li class="list-inline-item mr-3"><%= link_to "Privacy", "" %></li>
-    </ul>
-  </div>
-</footer>
+<% if current_user %>
+
+  <footer class="footer text-muted">
+    <div class="container">
+      <span>© <%= Date.today.year %> DevStonic - Bruno Steinmann</span>
+      <ul class="list-inline mb-0 float-right">
+        <li class="list-inline-item mr-3"><%= link_to "Terms", "" %></li>
+        <li class="list-inline-item mr-3"><%= link_to "Privacy", "" %></li>
+      </ul>
+    </div>
+  </footer>
+
+<% end %>

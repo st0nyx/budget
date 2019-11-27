@@ -8,6 +8,8 @@ class Expense < ApplicationRecord
 
   scope :recent, -> { where('date > ?', 1.week.ago).order(date: :desc) }
 
+  scope :this_month, -> { where('date > ?', Time.now.month) }
+
   # monetize :amount_cents
 
   def schedulerunner
